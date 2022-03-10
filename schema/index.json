@@ -1,0 +1,100 @@
+{
+  "$id": "#PROVIDER_NAME",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "title": "PROVIDER_NAME Analytics",
+  "description": "https://github.com/ampproject/amphtml/blob/master/extensions/amp-analytics/amp-analytics.md",
+  "definitions": {
+    "triggerVars": {
+      "$id": "#triggerVars",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "propertyNames": {
+          "type": "string"
+        }
+      }
+    },
+    "trigger": {
+      "$id": "#trigger",
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "type": "object",
+      "properties": {
+        "on": {
+          "type": "string"
+        },
+        "action": {
+          "enum": [
+            "pageview"
+          ]
+        },
+        "vars": {
+          "$ref": "#/definitions/triggerVars"
+        }
+      },
+      "required": [
+        "on",
+        "action"
+      ],
+      "oneOf": [
+        {
+          "properties": {
+            "action": {
+              "enum": [
+                "pageview"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  },
+  "required": [
+    "vars"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "vars": {
+      "type": "object",
+      "required": [
+
+      ],
+      "properties": {
+
+      },
+      "additionalProperties": false
+    },
+    "extraUrlParams": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+      }
+    },
+    "triggers": {
+      "type": "object",
+      "properties": {
+        "__extends": {
+          "type": "string",
+          "title": "nested field extends Path:",
+          "description": "Path of JSON that we want to extend",
+          "default": ""
+        }
+      },
+      "patternProperties": {
+        "^((?!__extends).)*$": {
+          "$ref": "#/definitions/trigger"
+        }
+      }
+    },
+    "middleware": {
+      "type": "string"
+    },
+    "platforms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": ["TOUCH", "AMP", "CHEROKEE"]
+      }
+    }
+  }
+}

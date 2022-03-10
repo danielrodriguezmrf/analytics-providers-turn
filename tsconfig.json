@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"baseUrl": "src",
+		"outDir": "dist",
+		"module": "es6",
+		"noImplicitAny": false,
+		"removeComments": true,
+		"esModuleInterop": true,
+		"moduleResolution": "node",
+		"isolatedModules": true,
+		"noImplicitReturns": true,
+		"forceConsistentCasingInFileNames": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUnusedLocals": true,
+		"pretty": true,
+		"strict": true,
+		"sourceMap": true,
+		"target": "es2018"
+	},
+	"include": [
+		"src",
+		"extractor"
+	],
+	"exclude": [
+		"dist",
+		"playground-dist",
+		"acidtests"
+	]
+}

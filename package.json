@@ -1,0 +1,83 @@
+{
+	"name": "@marfeel/analytics-providers-PROVIDER_NAME",
+	"version": "1.0.0",
+	"description": "PROVIDER_NAME provider",
+	"main": "dist/index.es2015.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist",
+		"schema/index.json"
+	],
+	"config": {
+		"providerCliConfig": "./node_modules/@marfeel/analytics-providers-cli/config/"
+	},
+	"scripts": {
+		"build": "provider-cli build -p && tsc --emitDeclarationOnly -d src/**/*.ts  --outDir dist",
+		"build:dev": "provider-cli build && tsc --emitDeclarationOnly -d src/**/*.ts --outDir dist",
+		"lint": "provider-cli lint",
+		"test": "provider-cli test --configs-path='./node_modules/@marfeel/analytics-providers-cli/'",
+		"test:schema": "provider-cli test:schema",
+		"acid-tests": "cp -r ./node_modules/@marfeel/analytics-providers-acid-tests/ ./acidtests && npx jest --coverage=false --config='./node_modules/@marfeel/analytics-providers-cli/jest.config.js' ./acidtests && rm -rf ./acidtests",
+		"deploy": "provider-cli deploy",
+		"build:playground": "provider-cli docs:build --configs-path='./node_modules/@marfeel/analytics-providers-playground/' --statics-path='./node_modules/@marfeel/analytics-providers-playground/public/'",
+		"start": "npm run build:playground && provider-cli start --configs-path='./node_modules/@marfeel/analytics-providers-playground/' --statics-path='./node_modules/@marfeel/analytics-providers-playground/public/'"
+	},
+	"repository": {
+		"type": "git",
+		"url": "ssh://git@github.com:Marfeel/marfeel-releases.git"
+	},
+	"keywords": [
+		"analytic",
+		"PROVIDER_NAME"
+	],
+	"author": "Marfeel",
+	"license": "ISC",
+	"publishConfig": {
+		"registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
+	},
+	"bugs": {
+		"url": "https://github.com/Marfeel/analytics-providers-PROVIDER_NAME/issues"
+	},
+	"eslintConfig": {
+		"parserOptions": {
+			"project": "./tsconfig.json"
+		},
+		"extends": [
+			"@marfeel/ts",
+			"@marfeel/jest"
+		],
+		"globals": {
+			"process": true,
+			"__dirname": true
+		}
+	},
+	"eslintIgnore": [
+		"node_modules",
+		"jest.config.js",
+		"jest.setup.js",
+		"babel.config.js",
+		"dist",
+		"lib",
+		"coverage",
+		"playground-dist",
+		"acidtests"
+	],
+	"homepage": "https://github.com/Marfeel/analytics-providers-PROVIDER_NAME/blob/master/README.md",
+	"devDependencies": {
+		"@babel/plugin-transform-runtime": "^7.12.1",
+		"@marfeel/analytics-providers-acid-tests": "^1.0.1-snapshot.93",
+		"@marfeel/analytics-providers-cli": "^1.3.1-snapshot.93",
+		"@marfeel/analytics-providers-environment": "^1.2.1-snapshot.93",
+		"@marfeel/analytics-providers-playground": "^1.0.2-snapshot.93",
+		"@marfeel/eslint-config-jest": "^1.0.4-snapshot.83",
+		"@marfeel/eslint-config-node": "^1.0.4-snapshot.83",
+		"@marfeel/eslint-config-ts": "^1.0.4-snapshot.83",
+		"@marfeel/provider-cli": "^1.0.1-snapshot.608",
+		"@types/jest": "^25.2.3",
+		"babel-loader": "^8.1.0"
+	},
+	"playgroundPublisher": {
+		"publishFolder": "playground-dist",
+		"publishName": "PROVIDER_NAME"
+	}
+}
