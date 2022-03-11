@@ -1,1 +1,6 @@
-{}
+{
+	"vars": { },
+	"touchVars": {
+		"beacon": "string"
+	}
+}

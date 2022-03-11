@@ -1,5 +1,5 @@
 {
-	"name": "@marfeel/analytics-providers-PROVIDER_NAME",
+	"name": "@marfeel/analytics-providers-turn",
 	"version": "1.0.0",
 	"description": "PROVIDER_NAME provider",
 	"main": "dist/index.es2015.js",
@@ -36,7 +36,7 @@
 		"registry": "https://repositories.mrf.io/nexus/repository/npm-internal/"
 	},
 	"bugs": {
-		"url": "https://github.com/Marfeel/analytics-providers-PROVIDER_NAME/issues"
+		"url": "https://github.com/Marfeel/analytics-providers-turn/issues"
 	},
 	"eslintConfig": {
 		"parserOptions": {
@@ -62,7 +62,7 @@
 		"playground-dist",
 		"acidtests"
 	],
-	"homepage": "https://github.com/Marfeel/analytics-providers-PROVIDER_NAME/blob/master/README.md",
+	"homepage": "https://github.com/Marfeel/analytics-providers-turn/blob/master/README.md",
 	"devDependencies": {
 		"@babel/plugin-transform-runtime": "^7.12.1",
 		"@marfeel/analytics-providers-acid-tests": "^1.0.1-snapshot.93",
@@ -78,6 +78,6 @@
 	},
 	"playgroundPublisher": {
 		"publishFolder": "playground-dist",
-		"publishName": "PROVIDER_NAME"
+		"publishName": "turn"
 	}
 }

@@ -23,11 +23,6 @@ describe('Provider', () => {
 	beforeEach(() => {
 		configuration = {
 			vars: {
-				site: '451449',
-				log: 'logs1202',
-				domain: '',
-				title: '',
-				level2: ''
 			},
 			touchVars: {
 				beacon: 'test'

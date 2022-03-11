@@ -56,13 +56,20 @@
   "properties": {
     "vars": {
       "type": "object",
+      "required": [ ],
+      "properties": { },
+      "additionalProperties": false
+    },
+    "touchVars": {
+      "type": "object",
       "required": [
-
+        "beacon"
       ],
       "properties": {
-
-      },
-      "additionalProperties": false
+        "beacon": {
+          "type": "string"
+        }
+      }
     },
     "extraUrlParams": {
       "type": "object",
