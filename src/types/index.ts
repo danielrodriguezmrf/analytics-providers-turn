@@ -24,6 +24,8 @@ export interface Vars {
 }
 
 export interface TouchVars {
+	beacon: string;
+	cid?: string
 }
 
 export interface Triggers {

@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 by Marfeel Solutions (http://www.marfeel.com)
+ * Copyright (c) 2022 by Marfeel Solutions (http://www.marfeel.com)
  * All Rights Reserved.
  *
  * NOTICE:  All information contained herein is, and remains
@@ -12,20 +12,10 @@
  * from Marfeel Solutions SL.
  */
 
-import { Config } from '../src';
+import { Config } from '../src/types';
 
 export default class Extractor {
-	static onRequest(url: string, page: any): Promise<Config[]> {
-		return this.matches(url) ?
-			Promise.resolve([Extractor.extract(url)]) :
-			Promise.resolve([]);
-	}
-
-	private static matches(url: string): boolean {
-		// TODO To be implemented
-	}
-
-	private static extract(url: string): Config {
-		// TODO To be implemented
+	static async onRequest(url: string, page: string): Promise<Config[]> {
+		return Promise.resolve([]);
 	}
 }

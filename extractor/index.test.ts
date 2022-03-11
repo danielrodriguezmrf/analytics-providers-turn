@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2020 by Marfeel Solutions (http://www.marfeel.com)
+ * Copyright (c) 2022 by Marfeel Solutions (http://www.marfeel.com)
  * All Rights Reserved.
  *
  * NOTICE:  All information contained herein is, and remains
@@ -14,28 +14,8 @@
 
 import Extractor from './index';
 
-describe('extractor', () => {
-	describe('onRequest', () => {
-		let url;
+test('returns empty array', async() => {
+	const result = await Extractor.onRequest('test.com', 'page');
 
-		describe('url matches pattern', () => {
-			beforeEach(() => {
-
-			});
-
-			test('extracts data', async() => {
-
-			});
-		});
-
-		describe('url not matches pattern', () => {
-			beforeEach(() => {
-
-			});
-
-			test('returns empty result', async() => {
-
-			});
-		});
-	});
+	expect(result).toEqual([]);
 });

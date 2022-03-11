@@ -16,19 +16,47 @@ import { Marfeel } from '@marfeel/analytics-providers-environment';
 import Provider, { Config } from './index';
 
 describe('Provider', () => {
+	let provider: Provider;
+	let configuration: Config;
 	let marfeel: Marfeel;
 
 	beforeEach(() => {
+		configuration = {
+			vars: {
+				site: '451449',
+				log: 'logs1202',
+				domain: '',
+				title: '',
+				level2: ''
+			},
+			touchVars: {
+				beacon: 'test'
+			},
+			triggers: {}
+		};
 		marfeel = {
-			location: {
-				protocol: 'http://',
-				hostname: 'testHostname',
-				referrer: 'testReferrer'
+			scripts: {
+				installScript: jest.fn(() => Promise.resolve())
 			}
-		} as any as Marfeel; // eslint-disable-line @typescript-eslint/no-explicit-any
+		} as unknown as Marfeel;
 	});
 
 	describe('pageview', () => {
+		test('object.assign is called', async() => {
+			const objectSpy = jest.spyOn(Object, 'assign');
+			const img = document.createElement('img');
+			// eslint-disable-next-line max-len
+			const expectedSrc = 'https://r.turn.com/r/beacon?test&cid='
 
+			img.src = expectedSrc;
+
+			provider = new Provider(configuration, marfeel);
+
+			await provider.pageview(configuration, marfeel);
+
+			expect(objectSpy).toHaveBeenCalledWith(img, {
+				src: expectedSrc
+			});
+		});
 	});
 });
