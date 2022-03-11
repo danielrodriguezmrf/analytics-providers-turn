@@ -17,12 +17,12 @@ import { Config } from './types';
 
 export * from './types';
 
-const createScriptSrc = (config : Config) => {
+const createScriptSrc = (config: Config) => {
 	const beacon = config?.touchVars?.beacon;
 	const cid = config?.touchVars?.cid || '';
 
-	return `https://r.turn.com/r/beacon?${beacon}&cid=${cid}`
-}
+	return `https://r.turn.com/r/beacon?${beacon}&cid=${cid}`;
+};
 
 export default class Provider {
 	$initialized: Promise<void>;

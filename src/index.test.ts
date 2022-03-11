@@ -40,8 +40,7 @@ describe('Provider', () => {
 		test('object.assign is called', async() => {
 			const objectSpy = jest.spyOn(Object, 'assign');
 			const img = document.createElement('img');
-			// eslint-disable-next-line max-len
-			const expectedSrc = 'https://r.turn.com/r/beacon?test&cid='
+			const expectedSrc = 'https://r.turn.com/r/beacon?test&cid=';
 
 			img.src = expectedSrc;
 
