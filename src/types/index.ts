@@ -19,13 +19,13 @@ export interface Config {
 	touchVars?: TouchVars;
 	middleware?: string;
 }
-
+/* eslint-disable @typescript-eslint/no-empty-interface */
 export interface Vars {
 }
 
 export interface TouchVars {
 	beacon: string;
-	cid?: string
+	cid?: string;
 }
 
 export interface Triggers {
